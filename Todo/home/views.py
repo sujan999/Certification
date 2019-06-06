@@ -15,7 +15,7 @@ def index(request):
 def completed(request):
     completed_list = Todo.objects.filter(status='com')
     context = {
-        "todo_list": completed_list,
+        "todo": completed_list,
         "completed": True
     }
     return render(request, 'home/completed.html', context)
@@ -24,7 +24,7 @@ def completed(request):
 def pending(request):
     pending_list = Todo.objects.filter(status='pen')
     context = {
-        "todo_list": pending_list,
+        "todos": pending_list,
         "pending": True
     }
     return render(request, 'home/pending.html', context)

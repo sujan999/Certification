@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container mt-3">
+    {% for todo in todos %}
+    <div class="row">
+        <div class="col">
+            <div class="todo_wrapper my-3">
+                <h4>
+                    {{todo.title}}
+                </h4>
+                <a href="{{pending.get_absolute.url}}">
+                    {% if todo.status == 'pen' %} pending {% endif %}
+                </a>
+                <p class="text-muted">{{todo.date}}</p>
+                <p class="text-muted"></p>
+
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+{% block script_links %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}
